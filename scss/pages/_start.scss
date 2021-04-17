@@ -35,17 +35,35 @@ body {
       width: 12rem;
       height: 10rem;
       border-radius: 20px;
+      line-height: 1;
 
       p {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         color: gray;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
       }
 
       p:first-of-type {
-        font-weight: 700;
+        font-weight: 600;
         color: hsl(229, 25%, 31%);
-        font-size: 2rem;
+        font-size: 1.4rem;
       }
+    }
+  }
+  &__option {
+    @include flex(center, center, row);
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+
+    img:first-of-type {
+      position: absolute;
+    }
+    img {
+      flex: 0 0 33%;
+      margin: 40px;
     }
   }
 }
