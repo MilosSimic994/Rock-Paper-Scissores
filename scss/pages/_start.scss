@@ -7,12 +7,45 @@ body {
 
 .start {
   @include flex(space-evenly, center, column);
-  height: 100vh;
   width: 100%;
+
   &__results {
     @include flex(space-between, center, row);
     width: 100%;
+    border: 4px solid white;
+    border-radius: 5%;
+    padding: 2rem;
     color: white;
     text-transform: uppercase;
+
+    &--title {
+      font-size: 3rem;
+      margin: 0;
+      padding: 0;
+      p {
+        margin: 0;
+        padding: 0;
+        line-height: 0.9;
+        font-weight: 700;
+      }
+    }
+    &--score {
+      @include flex(center, center, column);
+      background-color: #fff;
+      width: 12rem;
+      height: 10rem;
+      border-radius: 20px;
+
+      p {
+        font-size: 3.5rem;
+        color: gray;
+      }
+
+      p:first-of-type {
+        font-weight: 700;
+        color: hsl(229, 25%, 31%);
+        font-size: 2rem;
+      }
+    }
   }
 }
