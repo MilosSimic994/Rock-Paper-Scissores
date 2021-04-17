@@ -1,0 +1,18 @@
+body {
+  background-image: linear-gradient($backgroundColor);
+  @include flex(center, center, column);
+  width: 100%;
+  font-family: "Barlow Semi Condensed";
+}
+
+.start {
+  @include flex(space-evenly, center, column);
+  height: 100vh;
+  width: 100%;
+  &__results {
+    @include flex(space-between, center, row);
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+  }
+}

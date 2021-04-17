@@ -1,0 +1,11 @@
+.container {
+  width: 40%;
+  max-width: 1440px;
+}
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
