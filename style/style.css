@@ -21,8 +21,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -82,6 +82,7 @@ body {
   flex-direction: column;
   width: 100%;
 }
+
 .start__results {
   display: flex;
   justify-content: space-between;
@@ -94,17 +95,20 @@ body {
   color: white;
   text-transform: uppercase;
 }
+
 .start__results--title {
   font-size: 3rem;
   margin: 0;
   padding: 0;
 }
+
 .start__results--title p {
   margin: 0;
   padding: 0;
   line-height: 0.9;
   font-weight: 700;
 }
+
 .start__results--score {
   display: flex;
   justify-content: center;
@@ -116,6 +120,7 @@ body {
   border-radius: 20px;
   line-height: 1;
 }
+
 .start__results--score p {
   font-size: 4.5rem;
   color: gray;
@@ -123,11 +128,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .start__results--score p:first-of-type {
   font-weight: 600;
   color: #2a46c0;
   font-size: 1.4rem;
 }
+
 .start__option {
   display: flex;
   justify-content: center;
@@ -137,6 +144,7 @@ body {
   position: relative;
   width: 100%;
 }
+
 .start__option img {
   flex: 0 0 30%;
   margin: 40px;
@@ -144,20 +152,25 @@ body {
   background-color: #fff;
   border-radius: 50%;
 }
+
 .start__option #paper {
   border: 30px solid #4865f4;
 }
+
 .start__option #scissors {
   border: 30px solid #ec9e0e;
 }
+
 .start__option #rock {
   border: 30px solid #dc2e4e;
 }
+
 .start__option img:first-of-type {
   position: absolute;
   background-color: unset;
   z-index: -2;
 }
+
 .start .rules {
   position: absolute;
   bottom: 30px;
@@ -172,5 +185,4 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
 }
-
 /*# sourceMappingURL=style.css.map */

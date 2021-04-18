@@ -3,16 +3,17 @@ body {
   @include flex(center, center, column);
   width: 100%;
   font-family: "Barlow Semi Condensed";
+  position: relative;
 }
 
 .start {
-  @include flex(space-evenly, center, column);
+  @include flex(flex-start, center, column);
   width: 100%;
 
   &__results {
     @include flex(space-between, center, row);
     width: 100%;
-    border: 4px solid white;
+    border: 4px solid hsl(217, 16%, 45%);
     border-radius: 5%;
     padding: 2rem;
     color: white;
@@ -47,7 +48,7 @@ body {
 
       p:first-of-type {
         font-weight: 600;
-        color: hsl(229, 25%, 31%);
+        color: hsl(229, 64%, 46%);
         font-size: 1.4rem;
       }
     }
@@ -58,12 +59,42 @@ body {
     position: relative;
     width: 100%;
 
+    img {
+      flex: 0 0 30%;
+      margin: 40px;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+    #paper {
+      border: 30px solid $paper;
+    }
+    #scissors {
+      border: 30px solid $scissors;
+    }
+    #rock {
+      border: 30px solid $rock;
+    }
+
     img:first-of-type {
       position: absolute;
+      background-color: unset;
+      z-index: -2;
     }
-    img {
-      flex: 0 0 33%;
-      margin: 40px;
-    }
+  }
+
+  .rules {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: transparent;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    padding: 8px 35px;
+    color: hsl(217, 16%, 45%);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
   }
 }
