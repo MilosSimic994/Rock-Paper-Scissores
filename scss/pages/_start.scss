@@ -84,6 +84,7 @@ body {
   }
 
   .rules {
+    cursor: pointer;
     position: absolute;
     bottom: 30px;
     right: 30px;
@@ -123,9 +124,17 @@ body {
       font-size: 1.6rem;
       text-transform: uppercase;
       color: hsl(229, 25%, 31%);
+
+      #closeBtn {
+        cursor: pointer;
+      }
     }
     &__img {
       width: 70%;
     }
   }
+}
+
+.visible {
+  display: flex;
 }

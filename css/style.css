@@ -159,6 +159,7 @@ body {
   z-index: -2;
 }
 .start .rules {
+  cursor: pointer;
   position: absolute;
   bottom: 30px;
   right: 30px;
@@ -207,8 +208,15 @@ body {
   text-transform: uppercase;
   color: #3b4363;
 }
+.modal .rules__title #closeBtn {
+  cursor: pointer;
+}
 .modal .rules__img {
   width: 70%;
+}
+
+.visible {
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
