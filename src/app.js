@@ -30,20 +30,22 @@ const compiuterChoice = () => {
 //player choice
 const playerChoice = (e) => {
   player = e.target.getAttribute("id").toUpperCase();
+  showWinner();
+
   console.log(e.target);
+  console.log(compiuter);
+  startOption.classList.add("start__optionComp");
 
   startOption.innerHTML = `
   <div>
     <h3>you Pick</h3>
-    <img id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
+    <img class="choice" id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
   </div>
   <div>
     <h3>you Pick</h3>
-    <img id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
+    <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
   </div>
   `;
-
-  showWinner();
 };
 
 //show the winner

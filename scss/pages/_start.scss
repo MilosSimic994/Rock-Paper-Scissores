@@ -10,6 +10,7 @@ body {
   @include flex(space-between, center, column);
   width: 100%;
   height: 60vh;
+  margin-top: 100px;
 
   &__results {
     @include flex(space-between, center, row);
@@ -58,11 +59,11 @@ body {
     @include flex(center, center, row);
     flex-wrap: wrap;
     position: relative;
-    width: 100%;
+    width: 80%;
     height: 100%;
 
-    img {
-      flex: 0 0 30%;
+    .choice {
+      flex: 0 0 25%;
       margin: 40px;
       padding: 40px;
       background-color: #fff;
@@ -82,6 +83,30 @@ body {
       position: absolute;
       background-color: unset;
       z-index: -2;
+    }
+  }
+  .start__optionComp {
+    @include flex(space-between, center, row);
+    flex-wrap: nowrap;
+    margin-top: 50px;
+    div {
+      @include flex(space-between, center, column);
+      width: 100%;
+      height: 100%;
+
+      h3 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        position: unset;
+        background-color: #fff;
+        z-index: unset;
+      }
     }
   }
 
