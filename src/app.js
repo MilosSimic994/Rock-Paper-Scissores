@@ -42,16 +42,28 @@ const playerChoice = (e) => {
     <img class="choice" id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
   </div>
   <div>
-    <h3>you Pick</h3>
-    <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
+  
   </div>
+
   `;
+
+  setTimeout(() => {
+    const shadowEl = startOption.querySelector("div:last-child");
+    const newItem = document.createElement("div");
+    newItem.innerHTML = ` <div>
+    <h3>the house picked</h3>
+    <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
+  </div>`;
+
+    shadowEl.parentNode.replaceChild(newItem, shadowEl);
+  }, 1000);
 };
 
 //show the winner
 
 const showWinner = () => {
   compiuterChoice();
+
   if (
     (player === PAPER && compiuter === ROCK) ||
     (player === ROCK && compiuter === SCISSORS) ||
