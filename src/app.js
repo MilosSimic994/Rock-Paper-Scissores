@@ -11,16 +11,29 @@ const choices = startOption.querySelectorAll("img");
 console.log(choices);
 
 let player;
+let compiuter;
 
-//playerr choice
+//compiuter choice
+
+const compiuterChoice = () => {
+  const random = Math.random().toFixed(2);
+  console.log(random);
+  if (random < 0.33) {
+    compiuter = "PAPER";
+  } else if (random > 0.33 && random < 0.66) {
+    compiuter = "SCISSORS";
+  } else {
+    compiuter = "ROCK";
+  }
+};
+compiuterChoice();
+console.log(compiuter);
+
+//player choice
 const playerChoice = (e) => {
   player = e.target.getAttribute("id").toUpperCase();
   console.log(player);
 };
-
-// compiuter choice
-
-const compiuterChoice = () => {};
 
 //show rules
 const openRules = () => {
