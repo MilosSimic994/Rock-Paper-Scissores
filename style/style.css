@@ -185,4 +185,45 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
 }
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.733);
+  z-index: 12;
+}
+
+.modal .rules {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+}
+
+.modal .rules__title {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #3b4363;
+}
+
+.modal .rules__img {
+  width: 70%;
+}
 /*# sourceMappingURL=style.css.map */
