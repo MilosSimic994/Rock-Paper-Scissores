@@ -3,9 +3,9 @@ const rulesBtn = document.getElementById("rules");
 const closeBtn = document.getElementById("closeBtn");
 const startOption = document.querySelector(".start__option");
 
-// const paper = doucment.getElementById("paper");
-// const scissors = doucment.getElementById("scissors");
-// const rock = doucment.getElementById("rock");
+const PAPER = "PAPER";
+const SCISSORS = "SCISSORS";
+const ROCK = "ROCK";
 
 const choices = startOption.querySelectorAll("img");
 console.log(choices);
@@ -19,20 +19,48 @@ const compiuterChoice = () => {
   const random = Math.random().toFixed(2);
   console.log(random);
   if (random < 0.33) {
-    compiuter = "PAPER";
+    compiuter = PAPER;
   } else if (random > 0.33 && random < 0.66) {
-    compiuter = "SCISSORS";
+    compiuter = SCISSORS;
   } else {
-    compiuter = "ROCK";
+    compiuter = ROCK;
   }
 };
-compiuterChoice();
-console.log(compiuter);
 
 //player choice
 const playerChoice = (e) => {
   player = e.target.getAttribute("id").toUpperCase();
-  console.log(player);
+  console.log(e.target);
+
+  startOption.innerHTML = `
+  <div>
+    <h3>you Pick</h3>
+    <img id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
+  </div>
+  <div>
+    <h3>you Pick</h3>
+    <img id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
+  </div>
+  `;
+
+  showWinner();
+};
+
+//show the winner
+
+const showWinner = () => {
+  compiuterChoice();
+  if (
+    (player === PAPER && compiuter === ROCK) ||
+    (player === ROCK && compiuter === SCISSORS) ||
+    (player === SCISSORS && compiuter === PAPER)
+  ) {
+    console.log("player win");
+  } else if (player === compiuter) {
+    console.log("is draw");
+  } else {
+    console.log("comp is win");
+  }
 };
 
 //show rules
