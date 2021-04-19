@@ -26,11 +26,25 @@ const compiuterChoice = () => {
     compiuter = ROCK;
   }
 };
+//show compiuter choice
+
+const showCompiuterChoice = () => {
+  setTimeout(() => {
+    const shadowEl = startOption.querySelector("div:last-child");
+    const newItem = document.createElement("div");
+    newItem.innerHTML = `
+        <h3>the house picked</h3>
+        <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
+      `;
+
+    shadowEl.parentNode.replaceChild(newItem, shadowEl);
+  }, 1000);
+};
 
 //player choice
 const playerChoice = (e) => {
   player = e.target.getAttribute("id").toUpperCase();
-  showWinner();
+  compiuterChoice();
 
   console.log(e.target);
   console.log(compiuter);
@@ -41,40 +55,36 @@ const playerChoice = (e) => {
     <h3>you Pick</h3>
     <img class="choice" id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
   </div>
+  <div class="newTry">
+    <h3 id="winner">pobedio si</h3>
+     <button >Play Again</button>
+  </div>   
   <div>
     <h3>the house pick...</h3>
     <div class="shadow"></div>
   </div>
 
   `;
-
-  setTimeout(() => {
-    const shadowEl = startOption.querySelector("div:last-child");
-    const newItem = document.createElement("div");
-    newItem.innerHTML = `
-    <h3>the house picked</h3>
-    <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
-  `;
-
-    shadowEl.parentNode.replaceChild(newItem, shadowEl);
-  }, 1000);
+  showCompiuterChoice();
+  setTimeout(showWinner, 2000);
 };
 
 //show the winner
 
 const showWinner = () => {
-  compiuterChoice();
-
+  let winner = document.getElementById("winner");
+  const newTry = document.querySelector(".newTry");
+  newTry.classList.add("visible");
   if (
     (player === PAPER && compiuter === ROCK) ||
     (player === ROCK && compiuter === SCISSORS) ||
     (player === SCISSORS && compiuter === PAPER)
   ) {
-    console.log("player win");
+    winner.innerText = "You WIN";
   } else if (player === compiuter) {
-    console.log("is draw");
+    winner.innerText = "IS A DRAW";
   } else {
-    console.log("comp is win");
+    winner.innerText = "You LOSE";
   }
 };
 
