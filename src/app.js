@@ -65,6 +65,9 @@ const playerChoice = (e) => {
   </div>
 
   `;
+  startOption.querySelector("button").addEventListener("click", () => {
+    location.reload();
+  });
   showCompiuterChoice();
   setTimeout(showWinner, 2000);
 };
@@ -82,7 +85,7 @@ const showWinner = () => {
   ) {
     winner.innerText = "You WIN";
   } else if (player === compiuter) {
-    winner.innerText = "IS A DRAW";
+    winner.innerText = "IS A DROW";
   } else {
     winner.innerText = "You LOSE";
   }
