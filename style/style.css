@@ -195,6 +195,15 @@ body {
   animation: fade-in 1s;
 }
 
+.start .start__optionComp div .shadow {
+  width: 70%;
+  height: 70%;
+  background-color: rgba(117, 117, 117, 0.274);
+  border-radius: 50%;
+  margin: 40px;
+  box-shadow: 0 0 5px rgba(117, 117, 117, 0.274);
+}
+
 .start .start__optionComp div h3 {
   color: white;
   text-transform: uppercase;

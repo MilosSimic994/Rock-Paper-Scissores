@@ -42,7 +42,8 @@ const playerChoice = (e) => {
     <img class="choice" id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
   </div>
   <div>
-  
+    <h3>the house pick...</h3>
+    <div class="shadow"></div>
   </div>
 
   `;
@@ -50,10 +51,10 @@ const playerChoice = (e) => {
   setTimeout(() => {
     const shadowEl = startOption.querySelector("div:last-child");
     const newItem = document.createElement("div");
-    newItem.innerHTML = ` <div>
+    newItem.innerHTML = `
     <h3>the house picked</h3>
     <img class="choice" id="${compiuter.toLowerCase()}" src="/images/icon-${compiuter.toLowerCase()}.svg" />
-  </div>`;
+  `;
 
     shadowEl.parentNode.replaceChild(newItem, shadowEl);
   }, 1000);
