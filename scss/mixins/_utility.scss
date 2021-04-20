@@ -2,6 +2,12 @@
   width: 50%;
   max-width: 1440px;
   height: 100vh;
+  @include mDesk {
+    width: 70%;
+  }
+  @include tablet {
+    width: 90%;
+  }
 }
 
 @mixin flex($justify, $align, $direction) {
