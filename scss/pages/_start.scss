@@ -11,6 +11,9 @@ body {
   width: 100%;
   height: 60vh;
   margin-top: 100px;
+  @include tablet {
+    margin: 50px 0;
+  }
 
   &__results {
     @include flex(space-between, center, row);
