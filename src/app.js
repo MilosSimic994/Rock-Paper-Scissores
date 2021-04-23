@@ -52,7 +52,7 @@ const playerChoice = (e) => {
 
   startOption.innerHTML = `
   <div>
-    <h3>you Pick</h3>
+    <h3>you Picked</h3>
     <img class="choice" id="${player.toLowerCase()}" src="/images/icon-${player.toLowerCase()}.svg" />
   </div>
   <div class="newTry">

@@ -23,11 +23,17 @@ body {
     padding: 2rem;
     color: white;
     text-transform: uppercase;
+    @include mob {
+      padding: 1rem;
+    }
 
     &--title {
       font-size: 3rem;
       margin: 0;
       padding: 0;
+      @include mob {
+        font-size: 1.5rem;
+      }
       p {
         margin: 0;
         padding: 0;
@@ -42,6 +48,10 @@ body {
       height: 10rem;
       border-radius: 20px;
       line-height: 1;
+      @include mob {
+        height: 5rem;
+        width: 5rem;
+      }
 
       p {
         font-size: 4.5rem;
@@ -49,12 +59,15 @@ body {
         font-weight: 700;
         margin: 0;
         padding: 0;
+        @include mob {
+          font-size: 2.6rem;
+        }
       }
 
       p:first-of-type {
         font-weight: 600;
         color: hsl(229, 64%, 46%);
-        font-size: 1.4rem;
+        font-size: 1rem;
       }
     }
   }
@@ -67,6 +80,9 @@ body {
     @include tablet {
       width: 100%;
     }
+    @include mob {
+      margin-top: 50px;
+    }
 
     .choice {
       cursor: pointer;
@@ -75,6 +91,10 @@ body {
       padding: 40px;
       background-color: #fff;
       border-radius: 50%;
+      @include mob {
+        padding: 17px;
+        margin: 17px;
+      }
     }
     #paper {
       border: 30px solid $paper;
@@ -85,11 +105,22 @@ body {
     #rock {
       border: 30px solid $rock;
     }
+    #paper,
+    #scissors,
+    #rock {
+      @include mob {
+        border-width: 17px;
+      }
+    }
 
     img:first-of-type {
       position: absolute;
       background-color: unset;
       z-index: -2;
+      @include mob {
+        width: 80%;
+        top: 60px;
+      }
     }
   }
   .start__optionComp {
@@ -97,6 +128,9 @@ body {
     flex-wrap: nowrap;
     margin-top: 50px;
     width: 100%;
+    @include mob {
+      margin-top: 10px;
+    }
     div {
       @include flex(space-between, center, column);
       flex: 0 0 30%;
@@ -106,6 +140,10 @@ body {
       position: relative;
       @include tablet {
         flex: 0 0 32%;
+      }
+      @include mob {
+        height: 80%;
+        flex: 0 0 48%;
       }
 
       .shadow {
@@ -118,6 +156,11 @@ body {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+
+        @include mob {
+          width: 5rem;
+          height: 5rem;
+        }
       }
 
       h3 {
@@ -126,6 +169,11 @@ body {
         font-size: 1.6rem;
         letter-spacing: 3px;
         margin-bottom: 20px;
+        @include mob {
+          font-size: 1rem;
+          letter-spacing: 1px;
+          margin-bottom: 15px;
+        }
       }
 
       img {
@@ -139,14 +187,25 @@ body {
       @include flex(center, center, column);
       h3 {
         font-size: 2.2rem;
+        margin: 0;
       }
       button {
         cursor: pointer;
         background-color: #fff;
-        color: red;
+        color: $paper;
         border-radius: 10px;
         padding: 10px 50px;
         font-size: 1.3rem;
+        @include mob {
+          padding: 10px 40px;
+        }
+      }
+
+      @include mob {
+        position: absolute;
+        bottom: -150px;
+        left: 50%;
+        transform: translate(-50%);
       }
       display: none;
     }
