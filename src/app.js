@@ -2,19 +2,24 @@ const modal = document.getElementById("modal");
 const rulesBtn = document.getElementById("rules");
 const closeBtn = document.getElementById("closeBtn");
 const startOption = document.querySelector(".start__option");
+const playerScoreEl = document.getElementById("player-score");
+const compScoreEl = document.getElementById("comp-score");
 
 const PAPER = "PAPER";
 const SCISSORS = "SCISSORS";
 const ROCK = "ROCK";
 
 const choices = startOption.querySelectorAll("img");
-console.log(choices);
 
 let player;
 let compiuter;
+let playerScore = 0;
+playerScore = localStorage.getItem("playerScore");
+console.log(playerScore);
+let compScore = 0;
+compScore = localStorage.getItem("compScore");
 
 //compiuter choice
-
 const compiuterChoice = () => {
   const random = Math.random().toFixed(2);
   console.log(random);
@@ -26,8 +31,8 @@ const compiuterChoice = () => {
     compiuter = ROCK;
   }
 };
-//show compiuter choice
 
+//show compiuter choice
 const showCompiuterChoice = () => {
   setTimeout(() => {
     const shadowEl = startOption.querySelector("div:last-child");
@@ -54,6 +59,7 @@ const playerChoice = (e) => {
 
   startOption.querySelector("button").addEventListener("click", () => {
     location.reload();
+    showScore();
   });
   showCompiuterChoice();
   setTimeout(showWinner, 2000);
@@ -88,11 +94,34 @@ const showWinner = () => {
     (player === ROCK && compiuter === SCISSORS) ||
     (player === SCISSORS && compiuter === PAPER)
   ) {
+    playerScore++;
+    localStorage.setItem("playerScore", playerScore);
     winner.innerText = "You WIN";
+    showScore();
   } else if (player === compiuter) {
     winner.innerText = "IS A DROW";
   } else {
+    compScore++;
+    localStorage.setItem("compScore", compScore);
     winner.innerText = "You LOSE";
+    showScore();
+  }
+};
+
+//show score
+const showScore = () => {
+  if (compScore === null && playerScore === null) {
+    compScoreEl.innerHTML = 0;
+    playerScoreEl.innerHTML = 0;
+  } else if (compScore === null && playerScore) {
+    compScoreEl.innerHTML = 0;
+    playerScoreEl.innerHTML = playerScore;
+  } else if (playerScore === null && compScore) {
+    playerScoreEl.innerHTML = 0;
+    compScoreEl.innerHTML = compScore;
+  } else {
+    compScoreEl.innerHTML = compScore;
+    playerScoreEl.innerHTML = playerScore;
   }
 };
 
@@ -100,12 +129,14 @@ const showWinner = () => {
 const openRules = () => {
   modal.classList.add("visible");
 };
+
 //hidde rules
 const closeRules = (e) => {
   if (e.target === modal || e.target === closeBtn) {
     modal.classList.remove("visible");
   }
 };
+showScore();
 
 //Add Events Listeners
 rulesBtn.addEventListener("click", openRules);
