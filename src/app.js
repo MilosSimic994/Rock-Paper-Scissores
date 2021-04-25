@@ -50,6 +50,17 @@ const playerChoice = (e) => {
   console.log(compiuter);
   startOption.classList.add("start__optionComp");
 
+  renderPicked();
+
+  startOption.querySelector("button").addEventListener("click", () => {
+    location.reload();
+  });
+  showCompiuterChoice();
+  setTimeout(showWinner, 2000);
+};
+
+//render piked
+const renderPicked = () => {
   startOption.innerHTML = `
   <div>
     <h3>you Picked</h3>
@@ -65,15 +76,9 @@ const playerChoice = (e) => {
   </div>
 
   `;
-  startOption.querySelector("button").addEventListener("click", () => {
-    location.reload();
-  });
-  showCompiuterChoice();
-  setTimeout(showWinner, 2000);
 };
 
 //show the winner
-
 const showWinner = () => {
   let winner = document.getElementById("winner");
   const newTry = document.querySelector(".newTry");
