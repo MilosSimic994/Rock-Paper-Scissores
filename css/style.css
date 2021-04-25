@@ -147,7 +147,7 @@ body {
 @media screen and (max-width: 450px) {
   .start__results--score {
     height: 5rem;
-    width: 5rem;
+    width: 6rem;
   }
 }
 .start__results--score p {
@@ -165,7 +165,12 @@ body {
 .start__results--score p:first-of-type {
   font-weight: 600;
   color: #2a46c0;
-  font-size: 1rem;
+  font-size: 2rem;
+}
+@media screen and (max-width: 450px) {
+  .start__results--score p:first-of-type {
+    font-size: 1rem;
+  }
 }
 .start__option {
   display: flex;
@@ -224,7 +229,7 @@ body {
 }
 @media screen and (max-width: 450px) {
   .start__option img:first-of-type {
-    width: 80%;
+    width: 75%;
     top: 50px;
   }
 }

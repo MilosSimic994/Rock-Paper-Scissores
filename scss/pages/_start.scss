@@ -50,7 +50,7 @@ body {
       line-height: 1;
       @include mob {
         height: 5rem;
-        width: 5rem;
+        width: 6rem;
       }
 
       p {
@@ -67,7 +67,10 @@ body {
       p:first-of-type {
         font-weight: 600;
         color: hsl(229, 64%, 46%);
-        font-size: 1rem;
+        font-size: 2rem;
+        @include mob {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -118,7 +121,7 @@ body {
       background-color: unset;
       z-index: -2;
       @include mob {
-        width: 80%;
+        width: 75%;
         top: 50px;
       }
     }

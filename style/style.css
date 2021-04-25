@@ -157,7 +157,7 @@ body {
 @media screen and (max-width: 450px) {
   .start__results--score {
     height: 5rem;
-    width: 5rem;
+    width: 6rem;
   }
 }
 
@@ -178,7 +178,13 @@ body {
 .start__results--score p:first-of-type {
   font-weight: 600;
   color: #2a46c0;
-  font-size: 1rem;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 450px) {
+  .start__results--score p:first-of-type {
+    font-size: 1rem;
+  }
 }
 
 .start__option {
@@ -248,7 +254,7 @@ body {
 
 @media screen and (max-width: 450px) {
   .start__option img:first-of-type {
-    width: 80%;
+    width: 75%;
     top: 50px;
   }
 }
@@ -388,8 +394,6 @@ body {
 .start .rules {
   cursor: pointer;
   position: absolute;
-  bottom: 30px;
-  right: 30px;
   background-color: transparent;
   border: 2px solid #606e85;
   border-radius: 10px;
@@ -406,8 +410,6 @@ body {
 .start .restart {
   cursor: pointer;
   position: absolute;
-  bottom: 30px;
-  right: 30px;
   background-color: transparent;
   border: 2px solid #606e85;
   border-radius: 10px;
