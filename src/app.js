@@ -1,5 +1,6 @@
 const modal = document.getElementById("modal");
 const rulesBtn = document.getElementById("rules");
+const restartBtn = document.getElementById("restart");
 const closeBtn = document.getElementById("closeBtn");
 const startOption = document.querySelector(".start__option");
 const playerScoreEl = document.getElementById("player-score");
@@ -125,6 +126,14 @@ const showScore = () => {
   }
 };
 
+//restart game
+const restartGame = () => {
+  localStorage.clear();
+  location.reload();
+  // compScoreEl.innerHTML = 0;
+  // playerScoreEl.innerHTML = 0;
+};
+
 //show rules
 const openRules = () => {
   modal.classList.add("visible");
@@ -142,6 +151,7 @@ showScore();
 rulesBtn.addEventListener("click", openRules);
 closeBtn.addEventListener("click", closeRules);
 modal.addEventListener("click", closeRules);
+restartBtn.addEventListener("click", restartGame);
 
 choices.forEach((choice) => {
   choice.addEventListener("click", playerChoice);
